@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toggle">
+    </div>
+    <script>
+    const body = document.querySelector("body")
+    const toggle = document.querySelector(".toggle")
+    toggle.addEventListener("click", ()=>{
+        body.classList.toggle("dark")
+
+        if (!body.classList.contains("dark")){
+            return localStorage.setItem("mode", "light");
+        }
+        localStorage.setItem("mode","dark")
+    })
+    toggle.addEventListener("click", ()=>toggle.classList.toggle('active'))
+    </script>
+</body>
+</html>
